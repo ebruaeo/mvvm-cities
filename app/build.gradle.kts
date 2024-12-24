@@ -7,6 +7,9 @@ android {
     namespace = "com.example.mvvm_cities"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.mvvm_cities"
         minSdk = 24
