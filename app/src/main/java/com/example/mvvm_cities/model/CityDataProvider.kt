@@ -1,4 +1,6 @@
-package com.example.mvvm_cities
+package com.example.mvvm_cities.model
+
+import com.example.mvvm_cities.R
 
 class CityDataProvider {
     private val cities = arrayListOf<City>()
