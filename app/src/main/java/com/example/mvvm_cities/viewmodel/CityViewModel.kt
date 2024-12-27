@@ -1,14 +1,18 @@
 package com.example.mvvm_cities.viewmodel
 
+import android.app.Application
 import android.os.Looper
 import android.os.Handler
+import android.util.Log
+import androidx.core.content.getSystemService
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mvvm_cities.model.City
 import com.example.mvvm_cities.model.CityDataProvider
 
-class CityViewModel : ViewModel() {
+class CityViewModel(application: Application) : AndroidViewModel(application) {
 
     private val cityData = MutableLiveData<City>()
     private val cities = CityDataProvider().getCities()
@@ -17,6 +21,9 @@ class CityViewModel : ViewModel() {
 
     init {
         loop()
+        Log.d("CityViewModel", application.toString())
+        Log.d("CityViewModel", application.filesDir.toString())
+
     }
 
     fun getCityData(): LiveData<City> = cityData
